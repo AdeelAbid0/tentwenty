@@ -47,16 +47,13 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Split Overlay Animation */}
       {showOverlay && (
         <>
-          {/* Top half - expands from center to top */}
           <div
             key={`top-${animationKey}`}
             className="absolute top-1/2 left-0 w-full bg-[#00000033] z-20 animate-expandToTop"
             aria-hidden="true"
           />
-          {/* Bottom half - expands from center to bottom */}
           <div
             key={`bottom-${animationKey}`}
             className="absolute top-1/2 left-0 w-full bg-[#00000033] z-20 animate-expandToBottom"

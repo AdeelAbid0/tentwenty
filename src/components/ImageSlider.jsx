@@ -81,7 +81,6 @@ export default function ImageSlider() {
       aria-label="Image slider"
       role="region"
     >
-      {/* Slider Track */}
       <div
         className="flex transition-transform"
         style={{
@@ -116,7 +115,6 @@ export default function ImageSlider() {
         ))}
       </div>
 
-      {/* Navigation Arrows - Desktop */}
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center hidden md:flex hover:bg-gray-100 transition-colors"
@@ -160,7 +158,6 @@ export default function ImageSlider() {
         </svg>
       </button>
 
-      {/* Dots */}
       <div
         className="flex justify-center gap-2 mt-7"
         role="tablist"
@@ -180,7 +177,6 @@ export default function ImageSlider() {
         ))}
       </div>
 
-      {/* Text */}
       <div className="text-center mt-4">
         <p
           ref={nameRef}
