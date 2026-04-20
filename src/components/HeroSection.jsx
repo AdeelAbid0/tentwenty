@@ -64,7 +64,7 @@ const HeroSection = () => {
           />
         </>
       )}
-      <div className="absolute top-0 w-full z-10 md:px-5! md:py-5! p-0!">
+      <div className="fixed top-0 w-full z-10 md:px-5! md:py-5! p-0!">
         <Header />
       </div>
       <div className="flex flex-col gap-2.5 relative z-10 pl-6! md:pl-33.75!">
