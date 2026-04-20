@@ -39,11 +39,16 @@ export default function Stepper({ imgArray, onImageChange }) {
   };
 
   return (
-    <div className="flex w-full gap-5 md:gap-10 items-center">
+    <div
+      className="flex w-full gap-5 md:gap-10 items-center"
+      role="navigation"
+      aria-label="Gallery navigation"
+    >
       <div className="relative w-34.5 h-34.5 flex items-center justify-center">
         <svg
           className="absolute top-0 left-0 w-full h-full"
           viewBox="0 0 138 138"
+          aria-hidden="true"
         >
           <rect
             x="3"
@@ -73,12 +78,13 @@ export default function Stepper({ imgArray, onImageChange }) {
         <div className="relative w-34.5 h-34.5 border border-[#EEF4F9] p-5.5">
           <img
             src={imgArray[displayIndex]}
-            alt=""
+            alt={`TenTwenty Farms Gallery Image ${displayIndex + 1}`}
             className="w-full h-full object-cover"
           />
-          <div
+          <button
             className="absolute inset-0 bg-[#221F2033] flex items-center justify-center cursor-pointer"
             onClick={handleNextClick}
+            aria-label="View next gallery image"
           >
             <span
               ref={nextRef}
@@ -86,21 +92,27 @@ export default function Stepper({ imgArray, onImageChange }) {
             >
               Next
             </span>
-          </div>
+          </button>
         </div>
       </div>
 
-      <div className="flex gap-4 items-center h-4.5">
+      <div
+        className="flex gap-4 items-center h-4.5"
+        aria-live="polite"
+        aria-label="Gallery progress"
+      >
         <p
           ref={numberRef1}
           className={`text-white text-lg font-medium fade-in-up-scroll ${number1Visible ? "visible" : ""}`}
+          aria-label={`Current image number ${displayIndex + 1}`}
         >
           0{displayIndex + 1}
         </p>
-        <span className="w-24 h-0.5 bg-[#EEF4F9]"></span>
+        <span className="w-24 h-0.5 bg-[#EEF4F9]" aria-hidden="true"></span>
         <p
           ref={numberRef2}
           className={`text-white text-lg font-medium fade-in-up-scroll ${number2Visible ? "visible" : ""}`}
+          aria-label={`Total images ${imgArray?.length}`}
         >
           0{imgArray?.length}
         </p>

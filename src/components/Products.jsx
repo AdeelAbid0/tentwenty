@@ -6,14 +6,17 @@ export default function Products() {
   const [descRef, descVisible] = useScrollAnimation();
 
   return (
-    <div className="flex w-full justify-center mt-20 md:mt-38.25!">
+    <section
+      className="flex w-full justify-center mt-20 md:mt-38.25!"
+      aria-label="Products section"
+    >
       <div className="flex flex-col w-full items-center gap-7.5">
-        <h1
+        <h2
           ref={titleRef}
           className={`text-[30px] leading-10 md:text-[56px] md:leading-18  font-normal text-black fade-in-up-scroll ${titleVisible ? "visible" : ""}`}
         >
           Quality Products
-        </h1>
+        </h2>
         <p
           ref={descRef}
           className={`text-[16px] leading-5! md:leading-8! md:text-2xl font-normal text-[#7A7777] max-w-182 text-center px-8 md:px-0 fade-in-up-scroll ${descVisible ? "visible" : ""}`}
@@ -27,6 +30,6 @@ export default function Products() {
           <ImageSlider />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

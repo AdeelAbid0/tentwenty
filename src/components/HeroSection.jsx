@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import Image1 from "../assets/Images/hero-image.png";
-import Image2 from "../assets/Images/slider-1.png";
-import Image3 from "../assets/Images/slider-2.png";
-import Image4 from "../assets/Images/slider-3.png";
+import Image1 from "../assets/images/hero-image.png";
+import Image2 from "../assets/images/slider-1.png";
+import Image3 from "../assets/images/slider-2.png";
+import Image4 from "../assets/images/slider-3.png";
 import Header from "./Header";
 import Stepper from "./Stepper";
 
@@ -31,12 +31,18 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative flex items-center h-screen p-0!">
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+    <section
+      className="relative flex items-center h-screen p-0!"
+      aria-label="Hero section"
+    >
+      <div
+        className="absolute top-0 left-0 w-full h-full z-0"
+        aria-hidden="true"
+      >
         <img
           key={currentImageIndex}
           src={imgArray[currentImageIndex]}
-          alt="hero-image"
+          alt="TenTwenty Farms - From Our Farms To Your Hands"
           className="w-full h-full object-cover animate-fadeIn"
         />
       </div>
@@ -48,11 +54,13 @@ const HeroSection = () => {
           <div
             key={`top-${animationKey}`}
             className="absolute top-1/2 left-0 w-full bg-[#00000033] z-20 animate-expandToTop"
+            aria-hidden="true"
           />
           {/* Bottom half - expands from center to bottom */}
           <div
             key={`bottom-${animationKey}`}
             className="absolute top-1/2 left-0 w-full bg-[#00000033] z-20 animate-expandToBottom"
+            aria-hidden="true"
           />
         </>
       )}
@@ -125,7 +133,7 @@ const HeroSection = () => {
           animation: fadeIn 0.8s ease-in-out forwards;
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 

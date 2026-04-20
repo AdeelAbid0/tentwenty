@@ -1,5 +1,5 @@
-import ArrowRightIcon from "../assets/svg/arrow-right.svg?react";
-import HamburgerIcon from "../assets/svg/hamburger.svg?react";
+import ArrowRightIcon from "../assets/icons/arrow-right.svg?react";
+import HamburgerIcon from "../assets/icons/hamburger.svg?react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Header() {
@@ -44,32 +44,46 @@ export default function Header() {
     },
   ];
   return (
-    <div className="flex w-full justify-between items-center bg-white px-6! md:px-9! py-4! md:py-8!">
-      <div className="md:block hidden">
+    <header
+      className="flex w-full justify-between items-center bg-white px-6! md:px-9! py-4! md:py-8!"
+      role="banner"
+    >
+      <nav className="md:block hidden" aria-label="Main navigation">
         <ul
           ref={navRef}
           className={`list-none flex w-full gap-5 text-black text-sm! font-normal leading-1.5! fade-in-up-scroll ${navVisible ? "visible" : ""}`}
+          role="menubar"
         >
           {navItems.map((item) => (
-            <li key={item.id}>
-              <button onClick={item.onclick}>{item.name}</button>
+            <li key={item.id} role="none">
+              <button
+                onClick={item.onclick}
+                role="menuitem"
+                aria-label={`Navigate to ${item.name}`}
+              >
+                {item.name}
+              </button>
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
       <div>
         <button
           ref={contactRef}
           className={`flex items-center gap-4 px-4! py-2! bg-[#FFFCFA] text-[#221F20] leading-1 border border-black fade-in-up-scroll ${contactVisible ? "visible" : ""}`}
+          aria-label="Contact us"
         >
           Contact us <ArrowRightIcon />
         </button>
       </div>
       <div className="md:hidden">
-        <button className="border border-[#F9F4EE] bg-[#F9F4EE] px-3! py-4!">
+        <button
+          className="border border-[#F9F4EE] bg-[#F9F4EE] px-3! py-4!"
+          aria-label="Open menu"
+        >
           <HamburgerIcon />
         </button>
       </div>
-    </div>
+    </header>
   );
 }
