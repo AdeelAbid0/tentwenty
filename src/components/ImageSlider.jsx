@@ -5,13 +5,21 @@ import Slider2 from "../assets/Images/slider-2.png";
 import Slider3 from "../assets/Images/slider-3.png";
 
 const slides = [
-  { img: Slider1, name: "Client 1", location: "Dubai, United Arab Emirates" },
+  {
+    img: Slider1,
+    name: "Client 1",
+    location: "Dubai, United Arab Emirates",
+  },
   {
     img: Slider2,
     name: "Client 2",
     location: "Abu Dhabi, United Arab Emirates",
   },
-  { img: Slider3, name: "Client 3", location: "Sharjah, United Arab Emirates" },
+  {
+    img: Slider3,
+    name: "Client 3",
+    location: "Sharjah, United Arab Emirates",
+  },
 ];
 
 export default function ImageSlider() {
@@ -91,7 +99,7 @@ export default function ImageSlider() {
             key={index}
             className="w-full shrink-0 flex justify-center items-center px-4"
           >
-            <div className="w-[180px] md:w-[434px] h-[230px] md:h-[619px] shrink-0 rounded-xl overflow-hidden shadow-xl">
+            <div className="w-45 md:w-108.5 h-57.5 md:h-154.75 shrink-0 rounded-xl overflow-hidden shadow-xl">
               <img
                 src={slide.img}
                 alt=""
@@ -119,7 +127,7 @@ export default function ImageSlider() {
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hidden md:flex hover:bg-gray-100 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg items-center justify-center hidden md:flex hover:bg-gray-100 transition-colors"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
