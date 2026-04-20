@@ -3,7 +3,7 @@ import Products from "./components/Products";
 
 const App = () => {
   return (
-    <main role="main">
+    <main>
       <HeroSection />
       <Products />
     </main>

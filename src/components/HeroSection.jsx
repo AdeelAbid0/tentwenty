@@ -76,7 +76,7 @@ const HeroSection = () => {
           To Your Hands
         </h1>
       </div>
-      <div className="absolute md:bottom-30 bottom-10 left-6 md:left-33.5">
+      <div className="absolute bottom-10 left-6 md:left-33.5">
         <Stepper imgArray={imgArray} onImageChange={handleImageChange} />
       </div>
 
